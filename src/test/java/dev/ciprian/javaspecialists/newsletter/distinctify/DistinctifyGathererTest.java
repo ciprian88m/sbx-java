@@ -1,7 +1,7 @@
-package dev.ciprian.javaspecialists.newsletter;
+package dev.ciprian.javaspecialists.newsletter.distinctify;
 
-import static dev.ciprian.javaspecialists.newsletter.DistinctifyMethods.METHOD_COMPARATOR;
-import static dev.ciprian.javaspecialists.newsletter.DistinctifyMethods.METHOD_RETURN_TYPE_AND_PARAMS;
+import static dev.ciprian.javaspecialists.newsletter.distinctify.DistinctifyMethods.METHOD_COMPARATOR;
+import static dev.ciprian.javaspecialists.newsletter.distinctify.DistinctifyMethods.METHOD_RETURN_TYPE_AND_PARAMS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayDeque;

@@ -1,4 +1,4 @@
-package dev.ciprian.javaspecialists.newsletter;
+package dev.ciprian.javaspecialists.newsletter.distinctify;
 
 import java.util.function.BiPredicate;
 import java.util.function.BinaryOperator;
