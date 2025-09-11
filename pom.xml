@@ -74,6 +74,10 @@
                             <version>2.73.0</version>
                             <style>PALANTIR</style>
                         </palantirJavaFormat>
+                        <excludes>
+                            <exclude>src/main/java/dev/ciprian/javaspecialists/newsletter/shuffle/ShuffleGatherer.java</exclude>
+                            <exclude>src/test/java/dev/ciprian/javaspecialists/newsletter/shuffle/ShuffleGathererTest.java</exclude>
+                        </excludes>
                         <importOrder/>
                         <removeUnusedImports/>
                         <trimTrailingWhitespace/>
