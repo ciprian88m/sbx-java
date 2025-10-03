@@ -1,10 +1,12 @@
 package dev.ciprian.javaspecialists.newsletter.shuffle;
 
-import module java.base;
-
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Gatherer;
+import java.util.stream.IntStream;
+import org.junit.jupiter.api.Test;
 
 class ShuffleGathererTest {
 
@@ -33,11 +35,8 @@ class ShuffleGathererTest {
         assertThat(shuffled).containsExactly(2, 1, 0, 3, 5, 4, 7, 6);
     }
 
-    private static List<Integer> printRandom(int from, int upto, int limit, Gatherer<Integer, List<Integer>, Integer> shuffler) {
-        return IntStream.range(from, upto)
-                .boxed()
-                .gather(shuffler)
-                .limit(limit)
-                .toList();
+    private static List<Integer> printRandom(
+            int from, int upto, int limit, Gatherer<Integer, List<Integer>, Integer> shuffler) {
+        return IntStream.range(from, upto).boxed().gather(shuffler).limit(limit).toList();
     }
 }
