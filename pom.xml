@@ -8,6 +8,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <immutables.version>2.12.0</immutables.version>
         <jmh.version>1.37</jmh.version>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
@@ -15,12 +16,30 @@
         <spotless.version>3.0.0</spotless.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.immutables</groupId>
+                <artifactId>bom</artifactId>
+                <version>${immutables.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.27.3</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.immutables</groupId>
+            <artifactId>value-annotations</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -95,17 +114,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.14.1</version>
                 <configuration>
+                    <release>25</release>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.openjdk.jmh</groupId>
                             <artifactId>jmh-generator-annprocess</artifactId>
                             <version>${jmh.version}</version>
                         </path>
+                        <path>
+                            <groupId>org.immutables</groupId>
+                            <artifactId>value</artifactId>
+                        </path>
                     </annotationProcessorPaths>
-                    <source>25</source>
-                    <target>25</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
